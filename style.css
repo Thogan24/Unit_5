@@ -1,0 +1,135 @@
+html{
+    background-color: rgb(60, 148, 163);
+    font-family: "Comic Sans", "sans-serif";
+}
+
+
+h1 {
+    /*  */
+    font-size: 60px;
+    text-align: center;
+    font-family: "Comic Sans", "sans-serif";
+}
+p, li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+    font-family: "Comic Sans", "sans-serif";
+}
+
+body {
+    background-color: rgb(0, 238, 255);
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+}
+
+h1 {
+    margin: 0;
+    padding: 20px 0;}
+    
+
+h2 {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+img, button {
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+    height: auto;
+}
+
+.counter {
+    display: flex;
+}
+
+.upgrades {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#buffTracker{
+    text-align: center;
+}
+
+.upgrades img {
+    width: 25%;
+}
+
+#buyIceTray:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyIceScoop:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyIceCone:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyIceStand:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyIceTruck:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyIceBulldozer:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyIceStore:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyIceFactory:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyClickBuffer:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyTimeCutter:active{
+    animation: pulse 1s infinite; 
+}
+
+#buyIceCone {
+    width: 10%;
+}
+
+span.language{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.iceCream{
+	transform: scale(1);
+	/*animation: pulse 1s infinite; */
+
+}
+
+.iceCream:active{
+    animation: pulse 1s infinite; 
+} 
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.95);
+	}
+} 

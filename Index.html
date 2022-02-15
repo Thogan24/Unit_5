@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=!, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title></title>
+</head>
+
+<!-- this is the body; working -->
+<body>
+    <!-- title -->
+    <h1 style="color:rgb(238, 148, 89)">Ice Clicker</h1>
+    <h2 style="color:rgb(128, 128, 128)">Click on the ice and progress through upgrades</h2>
+    <h2 style="color:rgb(128, 128, 128)">Each upgrade is ten times more than the last</h2>
+
+    <!-- clickable ices; working but incomplete -->
+    <div class="iceCream">
+        <img id="clicker" src="https://cdn.discordapp.com/attachments/931346618731614238/942772626831593532/ice1.png" alt="Ice">
+    </div>
+    
+
+
+    <audio src="ice-hit-ground-01.mp3"></audio>
+    <h1 id="counter"></h1>
+
+    <!-- automatic helpers -->
+    <div class="upgrades">   
+        <!-- <div class="iceTray">
+            <img id="buyIceTray" src="https://www.pngkit.com/png/full/31-312610_frigidaire-ice-cube-tray-light.png" alt="Ice Tray">
+        </div>                                                                                                                                                                                                                                            -->
+        <img id="buyIceTray" src="https://www.pngkit.com/png/full/31-312610_frigidaire-ice-cube-tray-light.png" alt="Ice Tray">
+        <img id="buyIceScoop" src="https://www.rockfordschools.org/wp-content/uploads/2017/09/ice-cream-scoop-transparent-png-picture.png" alt="Ice Cream Scoop">
+        <img id="buyIceCone" src="https://www.pngkit.com/png/full/58-580668_ice-cream-waffle-png-transparent-image-ice-cream.png" alt="Ice Cream Cone">
+        <img id="buyIceStand" src="https://cdn.discordapp.com/attachments/931346618731614238/938062229398499358/ice-cream-clipart-booth-ice-cream-booth-cartoon-text-leisure-activities-stand-shop-transparent-png-246859-removebg-preview.png" alt="Ice Cream Stand">
+        <img id="buyIceTruck" src="https://cdn.discordapp.com/attachments/931346618731614238/941687336075403314/image-removebg-preview.png" alt="Ice Cream Truck">
+        <img id="buyIceBulldozer" src="https://docs.google.com/drawings/d/e/2PACX-1vRZbx7pE4LYDKfZfqIQxVqaoSkUUCO9suEuhLXcIerkYw7jdMPNH4FTT1nDFt15-aFPiIA53JrGCOAy/pub?w=785&h=435" alt="Ice Cream Bulldozer">
+        <img id="buyIceStore" src="https://cdn.discordapp.com/attachments/931346618731614238/938064419232034836/image-removebg-preview.png" alt="Ice Cream Store">
+        <img id="buyIceFactory" src="https://docs.google.com/drawings/d/e/2PACX-1vQmdvCTRusjJd6blhdChUhqm1Fv8INi-9TLqCsuMBmfca9PmNufkFo3GxQEJrlZ9-c-9Z4Ed4n2bToT/pub?w=512&h=427" alt="Ice Cream Factory">
+        <img id="buyClickBuffer" src="https://cdn.discordapp.com/attachments/931346618731614238/939146861959327815/white-mouse-cursor-arrow-by-qubodup-11.png" alt="Click Buffer">
+        <h1 id="buffTracker"></h1>    
+        <img id="buyTimeCutter" src="https://cdn.discordapp.com/attachments/931346618731614238/940236082350522458/image-removebg-preview.png" alt = "Time Cutter"></img>
+        <h1 id="cutTracker"></h1>
+    </div>
+
+</body>
+
+<script>
+    let iceCream = document.querySelector('.iceCream');
+    //counter setup and initial display
+    let count = 10000000;      
+    let clickBuff = 1;
+    let autoclick = 0;
+    let buffMulti = 1;
+    let timeCutterCost = 1000000;
+    let timeAccel = 1000;
+    let audioElm = document.querySelector("audio");
+    counter.textContent = `Ice: ${count}`;
+    buffTracker.textContent = 'Click: ' + clickBuff+ '   Price: ' + clickBuff*150;
+    cutTracker.textContent = 'Speed: ' + timeAccel+ '   Price: ' + timeCutterCost;
+
+    //when the ice is clicked, the counter text is updated and count is increased by one
+    iceCream.addEventListener('click', event => {
+        audioElm.pause();
+        audioElm.currentTime = 0.2;
+        audioElm.play();
+        counter.textContent = `Ice: ${count = count+clickBuff}`;
+    });
+
+    var intervalId = setInterval(autoAdd, timeAccel);
+
+    function autoAdd( )
+    {
+        counter.textContent = `Ice: ${count = count+autoclick}`;;
+
+    }
+
+    let buyIceTray = document.querySelector('#buyIceTray');
+    buyIceTray.addEventListener('click', event => {
+        if(count > 99){
+            count = count - 100;
+            counter.textContent = `Ice: ${count}`;
+            autoclick++;
+        }
+    });
+
+    let buyIceScoop = document.querySelector('#buyIceScoop');
+    buyIceScoop.addEventListener('click', event => {
+        if(count > 999){
+            count = count - 1000;
+            counter.textContent = `Ice: ${count}`;
+            autoclick = autoclick + 15;
+        }
+    });
+
+    let buyIceCone = document.querySelector('#buyIceCone');
+    buyIceCone.addEventListener('click', event => {
+        if(count > 9999){
+            count = count - 10000;
+            counter.textContent = `Ice: ${count}`;
+            autoclick = autoclick + 200;
+        }
+    });
+
+    let buyIceStand = document.querySelector('#buyIceStand');
+    buyIceStand.addEventListener('click', event => {
+        if(count > 49999){
+            count = count - 50000;
+            counter.textContent = `Ice: ${count}`;
+            autoclick = autoclick + 1000;
+        }
+    });
+
+    let buyIceTruck = document.querySelector('#buyIceTruck');
+    buyIceTruck.addEventListener('click', event => {
+        if(count > 999999){
+            count = count - 1000000;
+            counter.textContent = `Ice: ${count}`;
+            autoclick = autoclick + 10000;
+        }
+    });
+
+    let buyIceBulldozer = document.querySelector('#buyIceBulldozer');
+    buyIceBulldozer.addEventListener('click', event => {
+        if(count > 9999999){
+            count = count - 10000000;
+            counter.textContent = `Ice: ${count}`;
+            autoclick = autoclick + 100000;
+        }
+    }); 
+
+    let buyIceStore = document.querySelector('#buyIceStore');
+    buyIceStore.addEventListener('click', event => {
+        if(count > 99999999){
+            count = count - 100000000;
+            counter.textContent = `Ice: ${count}`;
+            autoclick = autoclick + 100000000;
+        }
+    });
+
+    let buyIceFactory = document.querySelector('#buyIceFactory');
+    buyIceFactory.addEventListener('click', event => {
+        if(count > 999999999){
+            count = count - 1000000000;
+            counter.textContent = `Ice: ${count}`;
+            autoclick = autoclick + 1000000000;
+        }
+    });
+    
+    let buyClickBuffer = document.querySelector("#buyClickBuffer");
+    buyClickBuffer.addEventListener('click', event => {
+        if (count > (clickBuff*250)-1){
+            count = count - (clickBuff*250);
+            counter.textContent = `Ice: ${count}`;
+            clickBuff = clickBuff+buffMulti;
+            buffMulti += 1;
+            buffTracker.textContent = 'Click: ' + clickBuff+ '   Price: ' + clickBuff*250;
+        }
+    }); 
+
+    let buyTimeCutter = document.querySelector("#buyTimeCutter");
+    buyTimeCutter.addEventListener('click', event =>{
+        if(count > timeCutterCost-1){
+            count = count - timeCutterCost;
+            clearInterval(intervalId);
+            var intervalId = setInterval(autoAdd, timeAccel);
+            timeAccel = timeAccel/2;
+            timeCutterCost = timeCutterCost * 1000;
+            cutTracker.textContent = 'Speed: ' + timeAccel + '   Price: ' + timeCutterCost;
+        }
+    });
+    
+    
+
+
+</script>
+</html>
